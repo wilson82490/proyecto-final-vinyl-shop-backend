@@ -1,0 +1,25 @@
+{
+  "name": "proyecto-final-vinyl-shop-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wilson82490/proyecto-final-vinyl-shop-backend.git"
+  },
+  "keywords": [],
+  "author": "Vincenzo acconcia",
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/wilson82490/proyecto-final-vinyl-shop-backend/issues"
+  },
+  "homepage": "https://github.com/wilson82490/proyecto-final-vinyl-shop-backend#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
