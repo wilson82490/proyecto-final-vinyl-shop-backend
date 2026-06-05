@@ -1,5 +1,8 @@
 import { Router } from 'express';
-import Vinilos from '../models/vinilos.js';
+
+import { getVinyls } from '../controlers/vinyl.controler.js';
+import { getVinylsById } from '../controlers/vinyl.controler.js';
+
 
 const router = Router();
 
@@ -8,16 +11,9 @@ const router = Router();
 
 //prefijo: /api/vinyls
 
-router.get('/', async (req, res) => {
-  try{
-    /* res.json({message: 'Obtener todos los vinilos'}); */
-
-   const vinyls = await Vinilos.find();
-   res.json(vinyls);
-
-  } catch (error) {
-    res.status(500).json({message: 'Error al obtener los vinilos'});
-  }
-});
+router.get('/', getVinyls);
+router.get('/:id', getVinylsById);
 
 export default router;
+
+
