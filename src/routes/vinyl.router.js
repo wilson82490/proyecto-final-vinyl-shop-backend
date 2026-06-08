@@ -1,18 +1,22 @@
-import { Router } from 'express';
+import { Router } from "express";
 
-import { getVinyls } from '../controlers/vinyl.controler.js';
-import { getVinylsById } from '../controlers/vinyl.controler.js';
-
+import {
+  createVinyl,
+  updateVinyl,
+  getVinyls,
+  getVinylById,
+  deleteVinyl,
+} from "../controlers/vinyl.controler.js";
 
 const router = Router();
 
+// Prefijo: /api/vinyls
 
-
-
-//prefijo: /api/vinyls
-
-router.get('/', getVinyls);
-router.get('/:id', getVinylsById);
+router.get("/", getVinyls);
+router.get("/:id", getVinylById);
+router.post("/", createVinyl);
+router.put("/:id", updateVinyl);
+router.delete("/:id", deleteVinyl);
 
 export default router;
 
