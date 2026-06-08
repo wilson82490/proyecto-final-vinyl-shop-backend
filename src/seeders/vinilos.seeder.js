@@ -9,9 +9,9 @@ import Vinilos from '../models/vinilos.js';
 
 const vinyls = [
       {
-        title: 'Abbey Road',
+        name: 'Abbey Road',
         artist: 'The Beatles',
-        genre: 'Rock',
+        category: 'Rock',
         year: 1969,
         price: 29.99,
         stock: 10,
@@ -19,9 +19,9 @@ const vinyls = [
         description: 'The iconic 1969 album from The Beatles, featuring the famous zebra crossing cover.'
       },
       {
-        title: 'Thriller',
+        name: 'Thriller',
         artist: 'Michael Jackson',
-        genre: 'Pop',
+        category: 'Pop',
         year: 1982,
         price: 24.99,
         stock: 15,
@@ -29,9 +29,9 @@ const vinyls = [
         description: 'Michael Jackson\'s best-selling album with the hit single "Thriller".'
       },
       {
-        title: 'Back in Black',
+        name: 'Back in Black',
         artist: 'AC/DC',
-        genre: 'Rock',
+        category: 'Rock',
         year: 1980,
         price: 19.99,
         stock: 20,
