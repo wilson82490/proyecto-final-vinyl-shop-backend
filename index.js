@@ -5,6 +5,9 @@ import express from 'express';
 import cors from 'cors';
 import connectDB from './src/config/db.js';
 import vinylRouter from './src/routes/vinyl.router.js';
+import cartRouter from './src/routes/cart.router.js';
+import dashboardRouter from './src/routes/dashboard.router.js';
+import authRouter from './src/routes/auth.router.js';
 
 connectDB();
 
@@ -17,6 +20,9 @@ app.use(cors());
 
 // Routes
 app.use("/api/vinyls", vinylRouter);
+app.use("/api/cart", cartRouter);
+app.use("/api/dashboard", dashboardRouter);
+app.use("/api/auth", authRouter);
 
 
 app.get('/', (req, res) => {
