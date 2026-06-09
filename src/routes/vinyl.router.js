@@ -6,7 +6,7 @@ import {
   getVinyls,
   getVinylById,
   deleteVinyl,
-} from "../controlers/vinyl.controler.js";
+} from "../controllers/vinyl.controller.js";
 
 const router = Router();
 
