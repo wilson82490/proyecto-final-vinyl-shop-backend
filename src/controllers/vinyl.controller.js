@@ -24,19 +24,7 @@ export const createVinyl = async (req, res) => {
       });
     }
 
-    const vinyl = await Vinilos.create({
-      name,
-      artist,
-      description,
-      price,
-      category,
-      image,
-      label,
-      year,
-      format,
-      stock,
-      featured,
-    });
+    const vinyl = await Vinilos.create(req.body);
 
     return res.status(201).json(vinyl);
   } catch (error) {

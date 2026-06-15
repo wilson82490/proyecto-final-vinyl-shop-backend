@@ -43,6 +43,8 @@ export const registerUser = async (req, res) => {
       email: email.toLowerCase().trim(),
       passwordHash,
     });
+
+    
     const token = buildToken(user);
 
     return res.status(201).json({
