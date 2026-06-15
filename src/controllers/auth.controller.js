@@ -11,6 +11,7 @@ const buildToken = (user) =>
       sub: user._id.toString(),
       email: user.email,
       name: user.name,
+      isAdmin: Boolean(user.isAdmin),
     },
     jwtSecret,
     { expiresIn: "7d" }
@@ -51,6 +52,7 @@ export const registerUser = async (req, res) => {
       id: user._id,
       name: user.name,
       email: user.email,
+      isAdmin: Boolean(user.isAdmin),
       createdAt: user.createdAt,
       token,
     });
@@ -83,6 +85,7 @@ export const loginUser = async (req, res) => {
       id: user._id,
       name: user.name,
       email: user.email,
+      isAdmin: Boolean(user.isAdmin),
       token,
     });
   } catch (error) {
@@ -100,7 +103,7 @@ export const me = async (req, res) => {
 
     const token = authHeader.replace("Bearer ", "").trim();
     const payload = jwt.verify(token, jwtSecret);
-    const user = await User.findById(payload.sub).select("_id name email createdAt");
+    const user = await User.findById(payload.sub).select("_id name email isAdmin createdAt");
 
     if (!user) {
       return res.status(404).json({ message: "Usuario no encontrado" });
@@ -110,6 +113,7 @@ export const me = async (req, res) => {
       id: user._id,
       name: user.name,
       email: user.email,
+      isAdmin: Boolean(user.isAdmin),
       createdAt: user.createdAt,
     });
   } catch (error) {
